@@ -1,6 +1,7 @@
 package com.example.clicker
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,13 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var button1 = findViewById<Button>(R.id.button)
-        button1.setOnClickListener {
+        button1.setOnClickListener { v ->
             val perehod = Intent(this, EgraActivity::class.java)
             startActivity(perehod)
+            v.setBackgroundColor(Color.GRAY)
+
         }
 
     }
-
-
 
 }
