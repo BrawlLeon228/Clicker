@@ -4,18 +4,19 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 
 
 class EgraActivity : AppCompatActivity() {
-
+    var vid1 = 1
     val button1 : ImageButton by lazy { findViewById(R.id.button2) }
     val buttonExit: Button by lazy { findViewById<Button>(R.id.button4) }
     val text1 : TextView by lazy {  findViewById(R.id.textView1)}
 
-    var plus1 = 1000
+    var plus1 = vid1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +33,8 @@ class EgraActivity : AppCompatActivity() {
 
 
         button1.setOnClickListener {
+            val anim = AnimationUtils.loadAnimation(this,R.anim.yvelichenie)
+            button1.startAnimation(anim)
 
             int += plus1
             text1.text = int.toString()
