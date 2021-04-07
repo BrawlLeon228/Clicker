@@ -23,7 +23,7 @@ class EgraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_egra)
         var int = 0
-
+        var shop = findViewById<Button>(R.id.button5)
 
 
 
@@ -31,6 +31,11 @@ class EgraActivity : AppCompatActivity() {
             val perehod = Intent(this, MainActivity::class.java)
             startActivity(perehod)
         }
+        shop.setOnClickListener {
+            val go = Intent(this, Shop::class.java)
+            startActivity(go)
+        }
+
 
 
 

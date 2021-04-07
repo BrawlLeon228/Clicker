@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var tap = findViewById<Button>(R.id.button)
+
         tap.setOnClickListener { v ->
             val perehod = Intent(this, EgraActivity::class.java)
             startActivity(perehod)
