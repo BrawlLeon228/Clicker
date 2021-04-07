@@ -15,6 +15,7 @@ class EgraActivity : AppCompatActivity() {
     val button1 : ImageButton by lazy { findViewById(R.id.button2) }
     val buttonExit: Button by lazy { findViewById<Button>(R.id.button4) }
     val text1 : TextView by lazy {  findViewById(R.id.textView1)}
+    val shop = findViewById<Button>(R.id.button5)
 
     var plus1 = vid1
 
@@ -30,6 +31,11 @@ class EgraActivity : AppCompatActivity() {
             val perehod = Intent(this, MainActivity::class.java)
             startActivity(perehod)
         }
+        shop.setOnClickListener {
+            val perehodick = Intent(this, EgraActivity::class.java)
+            startActivity(perehodick)
+        }
+
 
 
         button1.setOnClickListener {

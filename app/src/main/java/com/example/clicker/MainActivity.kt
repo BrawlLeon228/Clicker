@@ -12,12 +12,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var button1 = findViewById<Button>(R.id.button)
-        button1.setOnClickListener { v ->
+        var tap = findViewById<Button>(R.id.button)
+        tap.setOnClickListener { v ->
             val perehod = Intent(this, EgraActivity::class.java)
             startActivity(perehod)
             v.setBackgroundColor(Color.GRAY)
-
+            }
         }
 
     }
