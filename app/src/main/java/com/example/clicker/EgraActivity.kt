@@ -4,10 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+
+
 
 
 class EgraActivity : AppCompatActivity() {
@@ -23,7 +26,6 @@ class EgraActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_egra)
         var int = 0
-        var shop = findViewById<Button>(R.id.button5)
 
 
 
@@ -31,18 +33,21 @@ class EgraActivity : AppCompatActivity() {
             val perehod = Intent(this, MainActivity::class.java)
             startActivity(perehod)
         }
-        shop.setOnClickListener {
-            val go = Intent(this, Shop::class.java)
-            startActivity(go)
-        }
-
-
 
 
         shop.setOnClickListener {
             val anime = AnimationUtils.loadAnimation(this,R.anim.miganie)
+            val go = Intent(this, Shop::class.java)
             shop.startAnimation(anime)
+            anime.setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationStart(p0: Animation?) {   }
+                override fun onAnimationEnd(p0: Animation?) {
+                    startActivity(go)
+                }
+                override fun onAnimationRepeat(p0: Animation?) { }
+            })
         }
+
         button1.setOnClickListener {
             val anim = AnimationUtils.loadAnimation(this,R.anim.yvelichenie)
             button1.startAnimation(anim)
