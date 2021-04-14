@@ -7,6 +7,7 @@
     tools:context=".Shop">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -25,10 +26,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="500$ +2" />
+            android:text="500$ 3" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/button7"
             android:layout_width="126dp"
             android:layout_height="38dp"
             android:text="Buy" />
@@ -53,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="150$ +1" />
+            android:text="150$ 2" />
 
         <Button
             android:id="@+id/button6"
@@ -82,14 +83,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="1000$ +3" />
+            android:text="1000$ 5" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/button8"
             android:layout_width="126dp"
             android:layout_height="38dp"
             android:text="Buy" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="62dp"
+        android:layout_height="34dp"
+        android:text="Exit"
+        android:textSize="12dp"
+        app:backgroundTint="#8A0F0F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
