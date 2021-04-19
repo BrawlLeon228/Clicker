@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activit"
+    app:startDestination="@id/egraActivity">
+
+    <fragment
+        android:id="@+id/egraActivity"
+        android:name="com.example.clicker.BlankFragment"
+        android:label="activity_egra"
+        tools:layout="@layout/activity_egra" />
+    <fragment
+        android:id="@+id/shop"
+        android:name="com.example.clicker.BlankFragment"
+        android:label="activity_shop"
+        tools:layout="@layout/activity_shop" />
+
+
+
+</navigation>
