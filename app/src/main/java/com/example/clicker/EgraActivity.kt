@@ -22,9 +22,7 @@ class EgraActivity : AppCompatActivity() {
     val text1 : TextView by lazy {  findViewById<TextView>(R.id.textView1)}
     val shop : Button by lazy { findViewById<Button>(R.id.button5)}
     var plus1 = Data.vid
-    var APP_PREFERENCES : String = "mysettings"
-    var APP_PREFERENCES_NAME:String = "money"
-    var mSettinds = SharedPreferences()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,12 +30,6 @@ class EgraActivity : AppCompatActivity() {
         setContentView(R.layout.activity_egra)
         var int = 0
 
-
-        var moneynew = text1.getText().toString()
-        mSettinds = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE)
-        var editor = mSettinds.edit()
-        editor.putString(APP_PREFERENCES_NAME, moneynew)
-        editor.apply()
 
         buttonExit.setOnClickListener {
             val perehod = Intent(this, MainActivity::class.java)
