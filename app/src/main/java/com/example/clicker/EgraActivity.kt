@@ -6,40 +6,41 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
+import androidx.fragment.app.Fragment
 
 
-class EgraActivity : AppCompatActivity() {
+class EgraActivity : Fragment() {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val root = inflater.inflate(R.layout.activity_egra, container, false)
 
 
-    val button1 : ImageButton by lazy { findViewById<ImageButton>(R.id.button2) }
-    val buttonExit: Button by lazy { findViewById<Button>(R.id.button4) }
-    val text1 : TextView by lazy {  findViewById<TextView>(R.id.textView1)}
-    val shop : Button by lazy { findViewById<Button>(R.id.button5)}
-    var plus1 = Data.vid
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_egra)
+        val button1 =root.findViewById<ImageButton>(R.id.button2)
+        val buttonExit= root.findViewById<Button>(R.id.button4)
+        val text1 =  root.findViewById<TextView>(R.id.textView1)
+        val shop =root.findViewById<Button>(R.id.button5)
         var int = 0
 
-
         buttonExit.setOnClickListener {
-            val perehod = Intent(this, MainActivity::class.java)
+            val perehod = Intent(requireContext(), start::class.java)
             startActivity(perehod)
         }
 
-
         shop.setOnClickListener {
-            val anime = AnimationUtils.loadAnimation(this,R.anim.miganie)
-            val go = Intent(this, Shop::class.java)
+            val anime = AnimationUtils.loadAnimation(requireContext(),R.anim.miganie)
+            val go = Intent(requireContext(), Shop::class.java)
             shop.startAnimation(anime)
             anime.setAnimationListener(object : Animation.AnimationListener {
                 override fun onAnimationStart(p0: Animation?) {   }
@@ -51,17 +52,33 @@ class EgraActivity : AppCompatActivity() {
         }
 
         button1.setOnClickListener {
-            val anim = AnimationUtils.loadAnimation(this,R.anim.yvelichenie)
+            val anim = AnimationUtils.loadAnimation(requireContext(),R.anim.yvelichenie)
             button1.startAnimation(anim)
 
-            int += plus1
+            int += Data.vid
             text1.text = int.toString()
 
 
 
         }
         Data.money = int
-    }
 
 
-}
+        return root
+
+        }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

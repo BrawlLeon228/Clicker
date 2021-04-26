@@ -4,10 +4,10 @@
 
     <item
         android:id="@+id/egraActivity"
-        android:icon="@drawable/ic_baseline_outlet_24"
-        android:title="Egra" />
-    <item
-        android:id="@+id/shop"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
         android:title="Shop" />
+    <item
+        android:id="@+id/shop"
+        android:icon="@drawable/ic_baseline_outlet_24"
+        android:title="Egra" />
 </menu>

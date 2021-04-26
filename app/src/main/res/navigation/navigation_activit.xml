@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/egraActivity"
-        android:name="com.example.clicker.BlankFragment"
-        android:label="activity_egra"
-        tools:layout="@layout/activity_egra" />
+        android:name="com.example.clicker.Shop"
+        android:label="activity_egra"/>
+
     <fragment
         android:id="@+id/shop"
-        android:name="com.example.clicker.BlankFragment"
+        android:name="com.example.clicker.EgraActivity"
         android:label="activity_shop"
         tools:layout="@layout/activity_shop" />
 
