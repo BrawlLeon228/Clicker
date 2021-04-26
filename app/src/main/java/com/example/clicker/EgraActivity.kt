@@ -30,8 +30,8 @@ class EgraActivity : Fragment() {
         val button1 =root.findViewById<ImageButton>(R.id.button2)
         val buttonExit= root.findViewById<Button>(R.id.button4)
         val text1 =  root.findViewById<TextView>(R.id.textView1)
+        text1.text = Data.money.toString()
         val shop =root.findViewById<Button>(R.id.button5)
-        var int = 0
 
         buttonExit.setOnClickListener {
             val perehod = Intent(requireContext(), start::class.java)
@@ -55,13 +55,12 @@ class EgraActivity : Fragment() {
             val anim = AnimationUtils.loadAnimation(requireContext(),R.anim.yvelichenie)
             button1.startAnimation(anim)
 
-            int += Data.vid
-            text1.text = int.toString()
+            Data.money += Data.vid
+            text1.text = Data.money.toString()
 
 
 
         }
-        Data.money = int
 
 
         return root
