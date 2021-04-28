@@ -24,39 +24,26 @@ class EgraActivity : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val root = inflater.inflate(R.layout.activity_egra, container, false)
+        val root = inflater.inflate(R.layout.shop, container, false)
 
 
         val button1 =root.findViewById<ImageButton>(R.id.button2)
         val buttonExit= root.findViewById<Button>(R.id.button4)
         val text1 =  root.findViewById<TextView>(R.id.textView1)
         text1.text = Data.money.toString()
-        val shop =root.findViewById<Button>(R.id.button5)
 
         buttonExit.setOnClickListener {
             val perehod = Intent(requireContext(), start::class.java)
             startActivity(perehod)
         }
 
-        shop.setOnClickListener {
-            val anime = AnimationUtils.loadAnimation(requireContext(),R.anim.miganie)
-            val go = Intent(requireContext(), Shop::class.java)
-            shop.startAnimation(anime)
-            anime.setAnimationListener(object : Animation.AnimationListener {
-                override fun onAnimationStart(p0: Animation?) {   }
-                override fun onAnimationEnd(p0: Animation?) {
-                    startActivity(go)
-                }
-                override fun onAnimationRepeat(p0: Animation?) { }
-            })
-        }
 
         button1.setOnClickListener {
             val anim = AnimationUtils.loadAnimation(requireContext(),R.anim.yvelichenie)
             button1.startAnimation(anim)
 
             Data.money += Data.vid
-            text1.text = Data.money.toString()
+            text1.text = "${Data.money.toString()}$"
 
 
 

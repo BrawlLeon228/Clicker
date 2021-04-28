@@ -17,7 +17,7 @@ class MainFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
-        val v =  inflater.inflate(R.layout.activity_egra, container, false)
+        val v =  inflater.inflate(R.layout.shop, container, false)
         v.findViewById<TextView>(R.id.textView1)
         return v
     }

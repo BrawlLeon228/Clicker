@@ -15,7 +15,7 @@ class BlankFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_shop, container, false).apply {
+        return inflater.inflate(R.layout.game, container, false).apply {
 
         }
     }

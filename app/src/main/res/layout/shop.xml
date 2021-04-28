@@ -47,18 +47,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="42dp"
-        android:layout_height="213dp"
-        android:text="Shop"
-        android:textSize="20dp"
-        app:backgroundTint="#2F74A3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.505" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
