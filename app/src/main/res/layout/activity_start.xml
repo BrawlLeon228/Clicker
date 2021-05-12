@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-            android:id="@+id/button3"
+            android:id="@+id/buttondon"
             android:layout_width="213dp"
             android:layout_height="49dp"
             android:text="DONATE"

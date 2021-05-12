@@ -17,6 +17,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 
 
 class EgraActivity : Fragment() {
@@ -27,23 +28,27 @@ class EgraActivity : Fragment() {
         val root = inflater.inflate(R.layout.shop, container, false)
 
 
+        var a = 0
         val button1 =root.findViewById<ImageButton>(R.id.button2)
-        val buttonExit= root.findViewById<Button>(R.id.button4)
         val text1 =  root.findViewById<TextView>(R.id.textView1)
-        text1.text = Data.money.toString()
+        text1.text = "${Data.money}$"
 
-        buttonExit.setOnClickListener {
-            val perehod = Intent(requireContext(), start::class.java)
-            startActivity(perehod)
-        }
 
 
         button1.setOnClickListener {
+            a += 1
+            if (a >= 1000){
+                val d = (1..1000).random()
+                if (d in 1..5){
+                    Snackbar.make(requireView(), "Вас заметило правительство -300$", Snackbar.LENGTH_LONG).show()
+                    Data.money -= 300
+                }
+            }
             val anim = AnimationUtils.loadAnimation(requireContext(),R.anim.yvelichenie)
             button1.startAnimation(anim)
 
             Data.money += Data.vid
-            text1.text = "${Data.money.toString()}$"
+            text1.text = "${Data.money}$"
 
 
 

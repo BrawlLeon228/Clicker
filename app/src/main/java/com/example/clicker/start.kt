@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment
 
 class start : AppCompatActivity() {
     val start : Button by lazy { findViewById<Button>(R.id.buttonstart) }
-
+    val donate1 : Button by lazy { findViewById<Button>(R.id.buttondon) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_start)
@@ -20,6 +20,11 @@ class start : AppCompatActivity() {
             val perehod = Intent(this, MainActivity::class.java)
             startActivity(perehod)
         }
+        donate1.setOnClickListener{
+            val lessgo = Intent(this, donate::class.java)
+            startActivity(lessgo)
+        }
+
 
     }
     }
